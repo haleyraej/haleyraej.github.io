@@ -26,8 +26,19 @@ body {
     z-index: 100;
 }
 
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+}
+
 .logo img {
-    height: 56px;
+    width: 320px;
+    height: auto;
+    max-width: 100%;
 }
 
 .nav a {
@@ -69,8 +80,28 @@ body {
 
 /* Mobile */
 @media (max-width: 600px) {
+    .hamburger {
+        display: block;
+    }
+
     .nav {
         display: none;
+    }
+
+    .nav.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 1rem;
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    }
+
+    .nav a {
+        margin: .5rem 0;
     }
 
     .masonry {
